@@ -1,7 +1,6 @@
 import css from "./Profile.module.css";
 import PropTypes from "prop-types";
 
-
 export function Profile({ username, tag, location, avatar, stats: { followers, views, likes } }) { 
     return (
         <div className={css.profile}>
@@ -41,10 +40,11 @@ Profile.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    // stats: {
+
+    // stats: PropTypes.shape({
     //     followers: PropTypes.number.isRequired,
     //     views: PropTypes.number.isRequired,
     //     likes: PropTypes.number.isRequired,
-    // }
+    // }),
     stats: PropTypes.objectOf(PropTypes.number.isRequired),        
 };
